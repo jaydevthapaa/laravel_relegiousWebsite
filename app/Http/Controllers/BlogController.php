@@ -11,7 +11,6 @@ class BlogController extends Controller
 
     return view('blogs.index', compact('blogs'));
     }
-
     function create(){
         return view('blogs.create');
     }
