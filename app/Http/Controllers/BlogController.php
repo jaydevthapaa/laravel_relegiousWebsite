@@ -50,7 +50,7 @@ class BlogController extends Controller
     function update(Request $request,int $id){
         $request -> validate([
             'title'=> 'required',
-            'descrption'=> 'required',
+            'description'=> 'required',
             'image'=> 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
@@ -67,5 +67,16 @@ class BlogController extends Controller
 
         $blog->save();
         return redirect('/blogs');
+    }
+
+    function destroy(int $id){
+        $blog = Blog::findOrFail($id);
+
+        if($blog->image){
+            Storage::disk('public')-> delete($blog->image);
+        }
+
+        $blog->delete();
+        return redirect('/blogs')-> with('success', 'Blog deleted successfully.');
     }
 }
