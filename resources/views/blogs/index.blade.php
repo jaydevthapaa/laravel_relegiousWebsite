@@ -20,6 +20,7 @@
                 <th>Image</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Action</th>
             </tr>
         </thead>
 
@@ -40,6 +41,10 @@
                 <td>{{ $blog->title }}</td>
 
                 <td>{{ $blog->description }}</td>
+
+                <td>
+                    <a href="{{ url('blogs/edit/'.$blog->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                </td>
 
             </tr>
 
