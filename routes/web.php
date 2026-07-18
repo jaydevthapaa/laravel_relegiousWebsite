@@ -59,7 +59,7 @@ Route::controller(FrontedController::class)-> group(function(){
 Route::controller(BlogController::class)-> group(function(){
     Route::get('/blogs', 'index');
     Route::get('/blogs/create', 'create');
-    Route::get('/blogs/store', 'store');
+    Route::post('/blogs/store', 'store');
     Route::get('/blogs/edit/{id}', 'edit');
     Route::post('/blogs/update/{id}', 'update');
     Route::get('/blogs/delete/{id}', 'destroy');
