@@ -10,9 +10,6 @@ use App\Http\Controllers\FrontedController;
 Route::controller(UserController::class)-> group(function(){
     Route::get('/','home');
     Route::get('/about','about');
-    Route::get('/blog_detail','blog_detail');
-    Route::get('/blog','blog');
-    Route::get('/detail', 'detail');
     Route::get('/donation_detail', 'donation_detail');
     Route::get('/faq', 'faq');
     Route::get('/login', 'login')->name('login');
@@ -54,6 +51,9 @@ Route::controller(AdminController::class)->group(function(){
 Route::controller(FrontedController::class)-> group(function(){
     Route::get('/event', 'events');
     Route::get('/event/{id}', 'eventDetail');
+    
+    Route::get('/blog', 'blogs');
+    Route::get('/blog/{id}', 'blogDetail');
 });
 
 Route::controller(BlogController::class)-> group(function(){
