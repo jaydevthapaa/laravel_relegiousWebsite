@@ -35,7 +35,7 @@
 		     <div class="blog_dt1">
 			   <div class="grid clearfix">
 			<figure class="effect-jazz mb-0">
-			<a href="{{ url('/blog_detail') }}"><img src="{{asset('img/42.jpg')}}" class="w-100" alt="img25"></a>
+			<a href="{{ url('/blog/'.$blog->id) }}"><img src="{{asset('storage/'.$blog->image) }}" class="w-100" alt="404"></a>
 			</figure>
 			</div>
 			   <ul class="font_14 mt-3">
@@ -46,7 +46,7 @@
 			 <li class="d-inline-block font_13"><i class="fa fa-comment col_oran me-1"></i>  2 Comments</li>
 		  </ul>
 		  <p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-		  <h4>Becoming a better version of you</h4>
+		  <h2>{{ $blog->title }}</h2>
 		  <p class="mt-3">Lorem Ipsum is simply dummy text of the <a class="col_oran" href="#">printing and typesetting</a> industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		  <h4>A cleansing hot shower or bath</h4>
 		  <p class="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p><hr>
@@ -65,26 +65,28 @@
 </div>
 <div class="blog_pgdt1i1 mt-4">
 		    <img src="{{asset('img/19.jpg')}}" alt="abc" class="float-start me-3">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali qua. Ut enim ad minim veniam, quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida tat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<p>
+		{{ $blog->description }}
+		</p>	
 		  </div>
 		  <div class="blog_1dt2i row">
 		    <div class="col-md-7">
 			 <div class="blog_1dt2il">
 			   <ul class="mb-0 tags">
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Wedding</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Flower</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Dress</a></li>
+				 <li class="d-inline-block"><a href="{{ url('/blog/'.$blog->id) }}">Wedding</a></li>
+				 <li class="d-inline-block"><a href="{{ url('/blog/'.$blog->id) }}">Flower</a></li>
+				 <li class="d-inline-block"><a href="{{ url('/blog/'.$blog->id) }}">Dress</a></li>
 				 </ul>
 			 </div>
 			</div>
 			<div class="col-md-5">
 			 <div class="blog_1dt2ir mt-1 text-end">
 			    <ul class="mb-0">
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Share On:</a></li>
-				 <li class="d-inline-block ms-3"><a href="{{ url('/blog_detail') }}"><i class="fa-brands fa-facebook"></i></a></li>
-				 <li class="d-inline-block ms-3"><a href="{{ url('/blog_detail') }}"><i class="fa-brands fa-twitter"></i></a></li>
-				 <li class="d-inline-block ms-3"><a href="{{ url('/blog_detail') }}"><i class="fa-brands fa-pinterest"></i></a></li>
-				 <li class="d-inline-block ms-3"><a href="{{ url('/blog_detail') }}"><i class="fa-brands fa-instagram"></i></a></li>
+				 <li class="d-inline-block"><a href="{{ url('/blog/'.$blog->id) }}">Share On:</a></li>
+				 <li class="d-inline-block ms-3"><a href="{{ url('/blog/'.$blog->id) }}"><i class="fa-brands fa-facebook"></i></a></li>
+				 <li class="d-inline-block ms-3"><a href="{{ url('/blog/'.$blog->id) }}"><i class="fa-brands fa-twitter"></i></a></li>
+				 <li class="d-inline-block ms-3"><a href="{{ url('/blog/'.$blog->id) }}"><i class="fa-brands fa-pinterest"></i></a></li>
+				 <li class="d-inline-block ms-3"><a href="{{ url('/blog/'.$blog->id) }}"><i class="fa-brands fa-instagram"></i></a></li>
 				 </ul>
 			 </div>
 			</div>
@@ -234,11 +236,11 @@ Save my name, email, and website in this browser for the next time I comment.
 				  <h5 class="mt-3">Dolor Porta</h5>
 				  <p>"Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit"</p>
 				  <ul class="mb-0">
-				    <li class="d-inline-block"><a class="text-muted a_tag" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-					 <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-instagram"></i></a></li>
-					  <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-pinterest"></i></a></li>
-					   <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-linkedin"></i></a></li>
-					    <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-twitter"></i></a></li>
+				    <li class="d-inline-block"><a class="text-muted a_tag" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+					 <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-instagram"></i></a></li>
+					  <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-pinterest"></i></a></li>
+					   <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-linkedin"></i></a></li>
+					    <li class="d-inline-block ms-1"><a class="text-muted a_tag" href="{{ url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-twitter"></i></a></li>
 				   </ul>
 				</div>
 		   </div>
@@ -259,7 +261,7 @@ Save my name, email, and website in this browser for the next time I comment.
 		   <div class="blog_1r1il">
 		       <div class="grid clearfix">
 			<figure class="effect-jazz mb-0">
-			<a href="{{ url('/blog_detail') }}"><img src="{{asset('img/19.jp')}}g" class="w-100" alt="img25"></a>
+			<a href="{{  url('/blog/'.$blog->id)  }}"><img src="{{asset('img/19.jp')}}g" class="w-100" alt="img25"></a>
 			</figure>
 			</div>
 		   </div>
@@ -267,7 +269,7 @@ Save my name, email, and website in this browser for the next time I comment.
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
 		     <h6 class="text-muted  font_13"><i class="fa fa-calendar col_oran me-1"></i> 06 February, 2024</h6>
-			 <h5 class="mb-0 fs-6"><a href="{{ url('/blog_detail') }}">Expecting new Love issued cases</a></h5>
+			 <h5 class="mb-0 fs-6"><a href="{{  url('/blog/'.$blog->id)  }}">Expecting new Love issued cases</a></h5>
 		   </div>
 		  </div>
 		</div><hr>
@@ -276,7 +278,7 @@ Save my name, email, and website in this browser for the next time I comment.
 		   <div class="blog_1r1il">
 		       <div class="grid clearfix">
 			<figure class="effect-jazz mb-0">
-			<a href="{{ url('/blog_detail') }}"><img src="{{asset('img/20.jpg')}}" class="w-100" alt="img25"></a>
+			<a href="{{  url('/blog/'.$blog->id)  }}"><img src="{{asset('img/20.jpg')}}" class="w-100" alt="img25"></a>
 			</figure>
 			</div>
 		   </div>
@@ -284,7 +286,7 @@ Save my name, email, and website in this browser for the next time I comment.
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
 		     <h6 class="text-muted  font_13"><i class="fa fa-calendar col_oran me-1"></i> 07 February, 2024</h6>
-			 <h5 class="mb-0 fs-6"><a href="{{ url('/blog_detail') }}">All we’ve discovered by now</a></h5>
+			 <h5 class="mb-0 fs-6"><a href="{{  url('/blog/'.$blog->id)  }}">All we’ve discovered by now</a></h5>
 		   </div>
 		  </div>
 		</div><hr>
@@ -293,7 +295,7 @@ Save my name, email, and website in this browser for the next time I comment.
 		   <div class="blog_1r1il">
 		       <div class="grid clearfix">
 			<figure class="effect-jazz mb-0">
-			<a href="{{ url('/blog_detail') }}"><img src="{{asset('img/21.jpg')}}" class="w-100" alt="img25"></a>
+			<a href="{{  url('/blog/'.$blog->id)  }}"><img src="{{asset('img/21.jpg')}}" class="w-100" alt="img25"></a>
 			</figure>
 			</div>
 		   </div>
@@ -301,42 +303,42 @@ Save my name, email, and website in this browser for the next time I comment.
 		  <div class="col-md-8 col-8">
 		   <div class="blog_1r1ir">
 		     <h6 class="text-muted  font_13"><i class="fa fa-calendar col_oran me-1"></i> 09 February, 2024</h6>
-			 <h5 class="mb-0 fs-6"><a href="{{ url('/blog_detail') }}">We Who Believe In Krishna</a></h5>
+			 <h5 class="mb-0 fs-6"><a href="{{  url('/blog/'.$blog->id)  }}">We Who Believe In Krishna</a></h5>
 		   </div>
 		  </div>
 		</div>
 		   </div>
 		   <div class="shop_pg1r1 border_1 p-4 mt-4">
 		        <h4 class="head_1 mb-4"> CATEGORIES</h4>
-				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Holy Book <span class="float-end">(2)</span></a></h6>
-				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Candle Holder <span class="float-end">(4)</span></a></h6>
-				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Glass <span class="float-end">(5)</span></a></h6>
-				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Piano <span class="float-end">(3)</span></a></h6>
-				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Stand <span class="float-end">(7)</span></a></h6>
-				<h6 class="font_14 mb-0"><a class="bg-light d-block p-3" href="{{ url('/blog_detail') }}">Uncategorized <span class="float-end">(1)</span></a></h6>
+				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Holy Book <span class="float-end">(2)</span></a></h6>
+				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Candle Holder <span class="float-end">(4)</span></a></h6>
+				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Glass <span class="float-end">(5)</span></a></h6>
+				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Piano <span class="float-end">(3)</span></a></h6>
+				<h6 class="font_14"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Stand <span class="float-end">(7)</span></a></h6>
+				<h6 class="font_14 mb-0"><a class="bg-light d-block p-3" href="{{  url('/blog/'.$blog->id)  }}">Uncategorized <span class="float-end">(1)</span></a></h6>
 		   </div>
 		   <div class="blog_pg1r1 border_1 p-4 mt-4 center_sm">
 		        <h4 class="head_1 mb-4">NEVER MISS OUT</h4>
 				<div class="shop_1dt1irnr">
 				  <ul class="mb-0">
-	    <li class="d-inline-block"><a class="d-block text-center" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-pinterest"></i></a></li>
-		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-instagram"></i></a></li>
-		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{ url('/blog_detail') }}"><i class="fa-brands fa-linkedin"></i></a></li>
+	    <li class="d-inline-block"><a class="d-block text-center" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{  url('/blog/'.$blog->id) }}"><i class="fa-brands fa-pinterest"></i></a></li>
+		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-instagram"></i></a></li>
+		<li class="d-inline-block ms-1"><a class="d-block text-center" href="{{  url('/blog/'.$blog->id)  }}"><i class="fa-brands fa-linkedin"></i></a></li>
 	  </ul>
 				 </div>
 		   </div>
 		   <div class="shop_pg1r1 border_1 p-4 mt-4">
 		        <h4 class="head_1 mb-4">PRODUCT TAGS</h4>
 				<ul class="mb-0 tags">
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Candle</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Temple</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Book</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Stand</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Wood</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Bottle</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Lorem</a></li>
-				 <li class="d-inline-block"><a href="{{ url('/blog_detail') }}">Porta</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id) }}">Candle</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Temple</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Book</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Stand</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Wood</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Bottle</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Lorem</a></li>
+				 <li class="d-inline-block"><a href="{{  url('/blog/'.$blog->id)  }}">Porta</a></li>
 				 </ul>
 		   </div>
 		   </div>
