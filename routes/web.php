@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FrontedController;
+use App\Http\Controllers\CartController;
 
 Route::controller(UserController::class)-> group(function(){
     Route::get('/','home');
@@ -65,4 +66,12 @@ Route::controller(BlogController::class)-> group(function(){
     Route::get('/blogs/delete/{id}', 'destroy');
     Route::get('/blogs/{id}', 'show');
 
+});
+
+Route::controller(CartController::class)-> group(function(){
+    Route::get('/cart', 'index');
+    Route::post('/cart/add/{id}', 'add');
+    Route::post('/cart/increase/{id}', 'increase');
+    Route::post('/cart/decrease/{id}' , 'decrease');
+    Route::delete('/cart/remove/{id}', 'remove');
 });
