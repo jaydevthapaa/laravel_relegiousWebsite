@@ -7,8 +7,8 @@
     <h2>Edit Blog</h2>
 
     <form action="{{ url('/blogs/update/'.$blog->id) }}"
-          method="POST"
-          enctype="multipart/form-data">
+        method="POST"
+        enctype="multipart/form-data">
 
         @csrf
 
@@ -43,8 +43,8 @@
 
             @if($blog->image)
 
-                <img src="{{ asset('storage/'.$blog->image) }}"
-                     width="180">
+            <img src="{{ asset('storage/'.$blog->image) }}"
+                width="180">
 
             @endif
 

@@ -4,15 +4,15 @@
 
 @if(session('success'))
 <div class="alert alert-success alert-dismissible fade show"
-     id="successAlert"
-     role="alert">
+    id="successAlert"
+    role="alert">
 
     {{ session('success') }}
 
     <button type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"></button>
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"></button>
 
 </div>
 @endif
@@ -24,7 +24,7 @@
         <h2>Events</h2>
 
         <a href="{{ url('/admin/events/create') }}"
-           class="btn btn-success">
+            class="btn btn-success">
 
             Add Event
 
@@ -35,25 +35,25 @@
     <!-- Search Form -->
 
     <form action="{{ url('/admin/events') }}"
-          method="GET"
-          class="mb-4">
+        method="GET"
+        class="mb-4">
 
         <div class="row">
 
             <div class="col-md-6">
 
                 <input type="text"
-                       name="search"
-                       class="form-control"
-                       placeholder="Search by title or location"
-                       value="{{ request('search') }}">
+                    name="search"
+                    class="form-control"
+                    placeholder="Search by title or location"
+                    value="{{ request('search') }}">
 
             </div>
 
             <div class="col-md-2">
 
                 <button type="submit"
-                        class="btn btn-primary w-100">
+                    class="btn btn-primary w-100">
 
                     Search
 
@@ -64,7 +64,7 @@
             <div class="col-md-2">
 
                 <a href="{{ url('/admin/events') }}"
-                   class="btn btn-secondary w-100">
+                    class="btn btn-secondary w-100">
 
                     Clear
 
@@ -97,15 +97,15 @@
 
         <tbody>
 
-        @forelse($events as $event)
+            @forelse($events as $event)
 
             <tr>
 
                 <td>
 
                     <img src="{{ asset('storage/'.$event->image) }}"
-                         width="80"
-                         class="img-thumbnail">
+                        width="80"
+                        class="img-thumbnail">
 
                 </td>
 
@@ -123,21 +123,21 @@
 
                     @if($event->status == 'Upcoming')
 
-                        <span class="badge bg-primary">
-                            Upcoming
-                        </span>
+                    <span class="badge bg-primary">
+                        Upcoming
+                    </span>
 
                     @elseif($event->status == 'Completed')
 
-                        <span class="badge bg-success">
-                            Completed
-                        </span>
+                    <span class="badge bg-success">
+                        Completed
+                    </span>
 
                     @else
 
-                        <span class="badge bg-danger">
-                            Cancelled
-                        </span>
+                    <span class="badge bg-danger">
+                        Cancelled
+                    </span>
 
                     @endif
 
@@ -146,22 +146,22 @@
                 <td>
 
                     <a href="{{ url('/admin/events/'.$event->id.'/edit') }}"
-                       class="btn btn-warning btn-sm">
+                        class="btn btn-warning btn-sm">
 
                         Edit
 
                     </a>
 
                     <form action="{{ url('/admin/events/'.$event->id) }}"
-                          method="POST"
-                          class="d-inline">
+                        method="POST"
+                        class="d-inline">
 
                         @csrf
                         @method('DELETE')
 
                         <button type="submit"
-                                class="btn btn-danger btn-sm"
-                                onclick="return confirm('Are you sure you want to delete this event?')">
+                            class="btn btn-danger btn-sm"
+                            onclick="return confirm('Are you sure you want to delete this event?')">
 
                             Delete
 
@@ -173,7 +173,7 @@
 
             </tr>
 
-        @empty
+            @empty
 
             <tr>
 
@@ -185,7 +185,7 @@
 
             </tr>
 
-        @endforelse
+            @endforelse
 
         </tbody>
 
@@ -202,21 +202,19 @@
 </div>
 
 <script>
+    setTimeout(function() {
 
-setTimeout(function () {
+        let alert = document.getElementById('successAlert');
 
-    let alert = document.getElementById('successAlert');
+        if (alert) {
 
-    if (alert) {
+            let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
 
-        let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+            bsAlert.close();
 
-        bsAlert.close();
+        }
 
-    }
-
-}, 3000);
-
+    }, 3000);
 </script>
 
 @endsection

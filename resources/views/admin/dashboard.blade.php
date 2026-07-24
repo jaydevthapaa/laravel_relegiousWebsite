@@ -85,7 +85,7 @@
 
                 <tbody>
 
-                @forelse($recentContacts as $contact)
+                    @forelse($recentContacts as $contact)
 
                     <tr>
 
@@ -96,15 +96,15 @@
                         <td>
                             @if($contact->status == 'Unread')
 
-                                <span class="badge bg-danger">
-                                    Unread
-                                </span>
+                            <span class="badge bg-danger">
+                                Unread
+                            </span>
 
                             @else
 
-                                <span class="badge bg-success">
-                                    Read
-                                </span>
+                            <span class="badge bg-success">
+                                Read
+                            </span>
 
                             @endif
                         </td>
@@ -113,14 +113,14 @@
 
                         <td>
                             <a href="{{ url('/admin/contacts/'.$contact->id) }}"
-                               class="btn btn-primary btn-sm">
+                                class="btn btn-primary btn-sm">
                                 View
                             </a>
                         </td>
 
                     </tr>
 
-                @empty
+                    @empty
 
                     <tr>
                         <td colspan="5" class="text-center">
@@ -128,7 +128,7 @@
                         </td>
                     </tr>
 
-                @endforelse
+                    @endforelse
 
                 </tbody>
 

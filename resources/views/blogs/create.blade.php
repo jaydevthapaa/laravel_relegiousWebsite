@@ -16,12 +16,12 @@
         </div>
 
         <div class="mb-3">
-            <label  class="form-label"> Description</label>
+            <label class="form-label"> Description</label>
             <textarea name="description" rows="6" class="form-control" required></textarea>
         </div>
 
         <div class="mb-3">
-            <label  class="form-label">Blog Image</label>
+            <label class="form-label">Blog Image</label>
             <input type="file" name="image" class="form-control">
         </div>
 

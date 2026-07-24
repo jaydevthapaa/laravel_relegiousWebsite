@@ -1,26 +1,26 @@
 @if(session('success'))
 <div class="alert alert-warning alert-dismissible fade show"
-     id="sucessAlert"
-     role="alert">
+    id="sucessAlert"
+    role="alert">
 
     {{ session('success') }}
 
     <button type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"></button>
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"></button>
 </div>
 @endif
 
 <script>
-	setTimeout(function(){
-		let alert = document.getElementById('sucessAlert');
+    setTimeout(function() {
+        let alert = document.getElementById('sucessAlert');
 
-		if (alert){
-			let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
-			bsAlert.close();
-		}
-	}, 3000);
+        if (alert) {
+            let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+            bsAlert.close();
+        }
+    }, 3000);
 </script>
 
 @extends('layout.admin')
@@ -58,7 +58,7 @@
 
                 <td>
                     @if($blog->image)
-                        <img src="{{ asset('storage/'.$blog->image) }}" width="100">
+                    <img src="{{ asset('storage/'.$blog->image) }}" width="100">
                     @endif
                 </td>
 
@@ -70,7 +70,7 @@
                     <a href="{{ url('blogs/edit/'.$blog->id)}}" class="btn btn-warning btn-sm">Edit</a>
 
                     <a href="{{ url('/blogs/delete/'. $blog->id) }}" class="btn btn-danger btn-sm"
-                    onclick="return confirm('Are you sure you want to delete this blog?')">Delete</a>
+                        onclick="return confirm('Are you sure you want to delete this blog?')">Delete</a>
                 </td>
 
             </tr>

@@ -15,17 +15,17 @@
             <label class="form-label">Event Title</label>
 
             <input type="text"
-                   name="title"
-                   class="form-control"
-                   value="{{ old('title') }}">
+                name="title"
+                class="form-control"
+                value="{{ old('title') }}">
 
             @error('title')
-                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                    {{ $message }}
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"></button>
-                </div>
+            <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                {{ $message }}
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"></button>
+            </div>
             @enderror
         </div>
 
@@ -34,16 +34,16 @@
             <label class="form-label">Description</label>
 
             <textarea name="description"
-                      rows="5"
-                      class="form-control">{{ old('description') }}</textarea>
+                rows="5"
+                class="form-control">{{ old('description') }}</textarea>
 
             @error('description')
-                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                    {{ $message }}
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"></button>
-                </div>
+            <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                {{ $message }}
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"></button>
+            </div>
             @enderror
         </div>
 
@@ -52,17 +52,17 @@
             <label class="form-label">Location</label>
 
             <input type="text"
-                   name="location"
-                   class="form-control"
-                   value="{{ old('location') }}">
+                name="location"
+                class="form-control"
+                value="{{ old('location') }}">
 
             @error('location')
-                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                    {{ $message }}
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"></button>
-                </div>
+            <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                {{ $message }}
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"></button>
+            </div>
             @enderror
         </div>
 
@@ -74,18 +74,18 @@
                 <label class="form-label">Event Date</label>
 
                 <input type="date"
-                       name="event_date"
-                       class="form-control"
-                       min="{{ date('Y-m-d') }}"
-                       value="{{ old('event_date') }}">
+                    name="event_date"
+                    class="form-control"
+                    min="{{ date('Y-m-d') }}"
+                    value="{{ old('event_date') }}">
 
                 @error('event_date')
-                    <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                        {{ $message }}
-                        <button type="button"
-                                class="btn-close"
-                                data-bs-dismiss="alert"></button>
-                    </div>
+                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                    {{ $message }}
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"></button>
+                </div>
                 @enderror
 
             </div>
@@ -96,17 +96,17 @@
                 <label class="form-label">Start Time</label>
 
                 <input type="time"
-                       name="start_time"
-                       class="form-control"
-                       value="{{ old('start_time') }}">
+                    name="start_time"
+                    class="form-control"
+                    value="{{ old('start_time') }}">
 
                 @error('start_time')
-                    <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                        {{ $message }}
-                        <button type="button"
-                                class="btn-close"
-                                data-bs-dismiss="alert"></button>
-                    </div>
+                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                    {{ $message }}
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"></button>
+                </div>
                 @enderror
 
             </div>
@@ -117,17 +117,17 @@
                 <label class="form-label">End Time</label>
 
                 <input type="time"
-                       name="end_time"
-                       class="form-control"
-                       value="{{ old('end_time') }}">
+                    name="end_time"
+                    class="form-control"
+                    value="{{ old('end_time') }}">
 
                 @error('end_time')
-                    <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                        {{ $message }}
-                        <button type="button"
-                                class="btn-close"
-                                data-bs-dismiss="alert"></button>
-                    </div>
+                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                    {{ $message }}
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert"></button>
+                </div>
                 @enderror
 
             </div>
@@ -140,16 +140,16 @@
             <label class="form-label">Event Image</label>
 
             <input type="file"
-                   name="image"
-                   class="form-control">
+                name="image"
+                class="form-control">
 
             @error('image')
-                <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
-                    {{ $message }}
-                    <button type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"></button>
-                </div>
+            <div class="alert alert-danger alert-dismissible fade show mt-2 validation-alert" role="alert">
+                {{ $message }}
+                <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"></button>
+            </div>
             @enderror
 
         </div>
@@ -167,19 +167,17 @@
 </div>
 
 <script>
+    setTimeout(function() {
 
-setTimeout(function () {
+        document.querySelectorAll('.validation-alert').forEach(function(alert) {
 
-    document.querySelectorAll('.validation-alert').forEach(function(alert){
+            let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
 
-        let bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+            bsAlert.close();
 
-        bsAlert.close();
+        });
 
-    });
-
-}, 5000);
-
+    }, 5000);
 </script>
 
 @endsection
